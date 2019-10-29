@@ -1,0 +1,26 @@
+{
+  "name": "projeto-pratico",
+  "version": "1.0.0",
+  "description": "primeiro projeto prático da reprograma :)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilyduraes/reprograma-projeto-pratico.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilyduraes/reprograma-projeto-pratico/issues"
+  },
+  "homepage": "https://github.com/emilyduraes/reprograma-projeto-pratico#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
