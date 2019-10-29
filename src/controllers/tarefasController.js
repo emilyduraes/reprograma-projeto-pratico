@@ -6,6 +6,10 @@ exports.get = (req, res) => {
 
 exports.getById = (req, res) => {
     const id = req.params.id;
-    const tasks = tarefas.find(tasks => tasks.id == id);
-    res.status(200).send(tasks);
+    
+    if(id > 4 || id <= 0){
+        res.status(404).send('Iti, esse ID aí não tem não.');
+    }
+    const tarefa = tarefas.find(tarefa => tarefa.id == id);
+    res.status(200).send(tarefa);
 }
