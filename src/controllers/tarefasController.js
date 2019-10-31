@@ -15,7 +15,17 @@ exports.getById = (req, res) => {
 }
 
 exports.getConcludedTasks = (req, res) => {
-    const tarefasConcluidas = tarefas.filter(tarefas => tarefas.concluido == "true");
-    // const tituloDescricao = tarefasConcluidas.map(tarefas => tarefas.descricao);
+    const tarefasConcluidas = tarefas.filter(tarefa => tarefa.concluido == "true");
     res.status(200).send(tarefasConcluidas);
+}
+
+exports.getByName = (req, res) => {
+    const colaborador = req.params.colaborador;
+    const encontrarColaborador = tarefas.find(tarefa => tarefa.nomeColaborador == colaborador);
+
+    if (!encontrarColaborador) {
+        res.status(404).send('Opa! Essa pessoa aí não tem na base. Confere se não esqueceu a letra maiúscula na primeira letra do nome. :)');
+    }
+
+    res.status(200).send(encontrarColaborador);
 }
