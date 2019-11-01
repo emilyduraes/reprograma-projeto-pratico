@@ -29,3 +29,25 @@ exports.getByName = (req, res) => {
 
     res.status(200).send(encontrarColaborador);
 }
+
+// exports.getNewerToOlder = (req, res) => {
+//     const data = tarefas.filter(item => item.dataInclusao);
+//     const arrData = data.split("/");
+
+//     console.log(arrData)
+
+//     /*exports.getAge = (req, res) => {
+//         const id = req.params.id
+//         const aluna = alunas.find(item => item.id == id)
+//         const dataNasc = aluna.dateOfBirth
+//         const arrData = dataNasc.split("/")
+//         const dia = arrData[0]
+//         const mes = arrData[1]
+//         const ano = arrData[2]
+//         const idade = calcularIdade(ano, mes, dia)
+//         res.status(200).send({ idade })
+//     } */
+
+
+//     res.status(200).send();
+// }
