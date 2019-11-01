@@ -4,7 +4,7 @@ const controller = require('../controllers/tarefasController');
 
 router.get("/", controller.get);
 router.get("/concluidos", controller.getConcludedTasks);
-router.get("/ordenados", controller.getNewerToOlder);
+router.get("/data", controller.getSortedDate);
 router.get("/:id", controller.getById);
 router.get("/:colaborador/buscar", controller.getByName);
 

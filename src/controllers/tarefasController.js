@@ -30,24 +30,31 @@ exports.getByName = (req, res) => {
     res.status(200).send(encontrarColaborador);
 }
 
-// exports.getNewerToOlder = (req, res) => {
-//     const data = tarefas.filter(item => item.dataInclusao);
-//     const arrData = data.split("/");
+function converterData(data) {
+    arrData = data.split('/');
+    // console.log("a arrData é " + arrData);
 
-//     console.log(arrData)
+    dataPadraoUs = arrData[1] + '-' + arrData[0] + '-' + arrData[2];
+    // console.log("a dataPadraoUs é " + dataPadraoUs);
 
-//     /*exports.getAge = (req, res) => {
-//         const id = req.params.id
-//         const aluna = alunas.find(item => item.id == id)
-//         const dataNasc = aluna.dateOfBirth
-//         const arrData = dataNasc.split("/")
-//         const dia = arrData[0]
-//         const mes = arrData[1]
-//         const ano = arrData[2]
-//         const idade = calcularIdade(ano, mes, dia)
-//         res.status(200).send({ idade })
-//     } */
+    dataConvertida = new Date(dataPadraoUs);
+    // console.log("a dataConvertida é " + dataConvertida);
+
+    return dataConvertida;
+}
+
+exports.getSortedDate = (req, res) => {
+
+    dataOrdenada = tarefas.sort((a, b) => {
+
+        if (converterData((a.dataInclusao)) > converterData((b.dataInclusao))) {
+            return -1;
+        } else if (converterData((a.dataInclusao)) < converterData((b.dataInclusao))) {
+            return 1;
+        }
+        return 0;
+    })
 
 
-//     res.status(200).send();
-// }
+    res.status(200).send(dataOrdenada);
+}
