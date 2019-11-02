@@ -1,4 +1,5 @@
-# Esse é o primeiro projeto prático no curso de backend da {reprograma} :)  ![logo da {reprograma}](https://media.licdn.com/dms/image/C560BAQH8NO1PFR-rug/company-logo_200_200/0?e=2159024400&v=beta&t=3lLA4loVvR0GJ3ISjbpxhgB_ieKQx7ciwNISWKkIcTo)
+# Esse é o primeiro projeto prático no curso de backend da {reprograma} :)  
+![logo da {reprograma}](https://media.licdn.com/dms/image/C560BAQH8NO1PFR-rug/company-logo_200_200/0?e=2159024400&v=beta&t=3lLA4loVvR0GJ3ISjbpxhgB_ieKQx7ciwNISWKkIcTo)
 
 ### Introdução
 Seja bem-vindo(a) ao meu primeiro projeto da {reprograma}! Essa API foi desenvolvida em Node.JS para fornecer os dados de tarefas dos colaboradores de uma empresa. .
