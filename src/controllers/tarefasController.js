@@ -21,7 +21,7 @@ exports.getConcludedTasks = (req, res) => {
 
 exports.getByName = (req, res) => {
     const colaborador = req.params.colaborador;
-    const encontrarColaborador = tarefas.find(tarefa => tarefa.nomeColaborador == colaborador);
+    const encontrarColaborador = tarefas.filter(tarefa => tarefa.nomeColaborador == colaborador);
 
     if (!encontrarColaborador) {
         res.status(404).send('Opa! Essa pessoa aí não tem na base. Confere se não esqueceu a letra maiúscula na primeira letra do nome. :)');
