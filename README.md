@@ -6,7 +6,7 @@ Seja bem-vindo(a) ao meu primeiro projeto da {reprograma}! Essa API foi desenvol
 
 ### Modo de Usar
 
-A API está rodando na porta 3000. Para acessá-la, **clone** esse repositório, dê **npm install** e **npm start**. O arquivo package.json mostra as dependências do projeto.
+A API está rodando na porta 3000. Para acessá-la, **clone** esse repositório, dê **npm install** no nível que se encontra o arquivo package.json.
 
 #### Rotas
 
