@@ -31,14 +31,10 @@ exports.getByName = (req, res) => {
 }
 
 function converterData(data) {
-    arrData = data.split('/');
-    // console.log("a arrData é " + arrData);
-
-    dataPadraoUs = arrData[1] + '-' + arrData[0] + '-' + arrData[2];
-    // console.log("a dataPadraoUs é " + dataPadraoUs);
-
-    dataConvertida = new Date(dataPadraoUs);
-    // console.log("a dataConvertida é " + dataConvertida);
+    let arrData = data.split('/');
+    
+    let dataConvertida = new Date(arrData[2],arrData[1]-1,arrData[0]);
+    // console.log("a dataConvertida é: " + dataConvertida);
 
     return dataConvertida;
 }
@@ -55,6 +51,9 @@ exports.getSortedDate = (req, res) => {
         return 0;
     })
 
-
     res.status(200).send(dataOrdenada);
+}
+
+exports.getDiferença{
+    
 }
