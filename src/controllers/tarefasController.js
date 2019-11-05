@@ -1,10 +1,10 @@
 const tarefas = require('../models/tarefas.json');
 
-exports.get = (req, res) => {
+const get = (req, res) => {
     res.status(200).send(tarefas);
 }
 
-exports.getById = (req, res) => {
+const getById = (req, res) => {
     const id = req.params.id;
 
     if (id > tarefas.length || id <= 0) {
@@ -14,12 +14,12 @@ exports.getById = (req, res) => {
     res.status(200).send(tarefa);
 }
 
-exports.getConcludedTasks = (req, res) => {
+const getConcludedTasks = (req, res) => {
     const tarefasConcluidas = tarefas.filter(tarefa => tarefa.concluido == "true");
     res.status(200).send(tarefasConcluidas);
 }
 
-exports.getByName = (req, res) => {
+const getByName = (req, res) => {
     const colaborador = req.params.colaborador;
     const encontrarColaborador = tarefas.filter(tarefa => tarefa.nomeColaborador == colaborador);
 
@@ -32,14 +32,14 @@ exports.getByName = (req, res) => {
 
 function converterData(data) {
     let arrData = data.split('/');
-    
-    let dataConvertida = new Date(arrData[2],arrData[1]-1,arrData[0]);
+
+    let dataConvertida = new Date(arrData[2], arrData[1] - 1, arrData[0]);
     // console.log("a dataConvertida é: " + dataConvertida);
 
     return dataConvertida;
 }
 
-exports.getSortedDate = (req, res) => {
+const getSortedDate = (req, res) => {
 
     dataOrdenada = tarefas.sort((a, b) => {
 
@@ -54,6 +54,10 @@ exports.getSortedDate = (req, res) => {
     res.status(200).send(dataOrdenada);
 }
 
-exports.getDiferença{
-    
+module.exports = {
+    get,
+    getById,
+    getConcludedTasks,
+    getByName,
+    getSortedDate,
 }
